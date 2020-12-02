@@ -2,14 +2,14 @@
 export class Solution {
   head: ListNode
 
-  constructor(head: ListNode | null) {
+  constructor(head: ListNode) {
     this.head = head
   }
 
   getRandom(): number {
-    let result: number
-    let nodesSeen = 1
-    let curentNode = this.head
+    let curentNode: ListNode | null = this.head
+    let nodesSeen: number = 1
+    let result: number = curentNode.val
 
     while (curentNode !== null) {
       let random = this.getRandomIntInclusive(1, nodesSeen)
